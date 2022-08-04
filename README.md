@@ -1,5 +1,5 @@
 # Automated-Live
-Automated LiveAutomated [Jan 2022 - Present 2022] 
+Automated Live [Jan 2022 - Present 2022] 
 
 Automated Live help you to do Automated Live Streaming from anywhere 
 Automated Live was Initially build for Live Streaming the cricket match on YouTube/Facebook (any Live streaming platform) but it has lot other potentials in the field of education, sports etc.
