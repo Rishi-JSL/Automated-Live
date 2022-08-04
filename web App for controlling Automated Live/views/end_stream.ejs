@@ -1,0 +1,32 @@
+<%- include('./includes/header.ejs')%>
+    <% if (!stream_data.isLive) { %>
+        <div class="alert alert-primary" role="alert" style="box-shadow: 5px 5px 15px 0px #888888; margin: 100px 500px; text-align: center; padding: 100px; ">
+            <h2>Stream isn't started yet, please come back after "going live"</h2>
+        </div>
+
+        <% } else { %>
+
+            <div class="card text-center" style="box-shadow: 5px 5px 15px 0px #888888; margin: 100px 500px;">
+                <div class="card-header">
+                    Current Running Stream
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Match ID : <%= stream_data.match_id %></h5>
+                    <h5 class="card-title">Stream FPS : <%= stream_data.stream_fps %></h5>
+                    <h5 class="card-title">Stream Resolution : <%= stream_data.stream_resolution %></h5>                    
+                    <h5 class="card-title">Youtube Key used : <%= stream_data.stream_key %></h5>
+                    <h5 class="card-title">YT Live Stream link : <a href="<%= stream_data.stream_link %>"><%= stream_data.stream_link %></a></h5>
+                    <p class="card-text">"After ending stream you can restart stream in 30 sec"</p>
+                    <form action="/end-stream" method="post">
+                        <button type="submit" class="btn btn-danger">End Stream</button>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+
+
+            
+            <% } %>
+
+        <%- include('./includes/footer.ejs') %>

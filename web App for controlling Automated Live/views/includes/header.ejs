@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageName %>
+    </title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a href="/" class="navbar-brand">Raspberry Pi Streaming Service</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu" style="display: flex; justify-content: space-between;">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link <%= path === '/' ? 'active' : '' %>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/start-stream"
+                        class="nav-link <%= path === '/start-stream' ? 'active' : '' %>">Configer Stream</a>
+                </li>
+                <li class="nav-item">
+                    <a href="end-stream" class="nav-link <%= path === '/end-stream' ? 'active' : '' %>">End Stream</a>
+                </li>
+                <li class="nav-item">
+                    <a href="show-live" class="nav-link <%= path === '/show-live' ? 'active' : '' %>">Show Live</a>
+                </li>
+            </ul>
+        </div>
+    </nav>

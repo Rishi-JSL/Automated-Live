@@ -1,0 +1,17 @@
+<%- include('./includes/header.ejs')%>
+
+    <% if(stream_data.isLive) { %>
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 100px;">
+        <iframe width="854" height="480" s src="<%= stream_data.stream_link  + "?autoplay=1"%>" frameborder="50"
+            allowfullscreen></iframe>
+    </div>
+    
+    <% } else { %>
+        <div class="alert alert-primary" role="alert" style="box-shadow: 5px 5px 15px 0px #888888; margin: 100px 500px; text-align: center; padding: 100px; ">
+            <h2>You can watch stream after starting it, please come back after "going live"</h2>
+        </div>
+    <% } %>
+
+
+    <!-- <iframe width="331" height="150" src="https://www.youtube.com/embed/JFd5gNk8UuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    <%- include('./includes/footer.ejs') %>

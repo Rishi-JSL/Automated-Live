@@ -1,0 +1,55 @@
+<%- include('./includes/header.ejs')%>
+    <% if(stream_data.isLive) { %>
+        <div class="alert alert-primary" role="alert"
+            style="box-shadow: 5px 5px 15px 0px #888888; margin: 100px 500px; text-align: center; padding: 100px; "">
+            <h2>End the stream and please come back after " ending" it so that you can start a new stream</h2>
+        </div>
+
+
+
+        <% } else { %>
+
+            <form class="container mt-5" style=" padding: 50px ;box-shadow: 5px 5px 15px 0px #888888; width: 30%;"
+                method="POST" action="/start-stream" id="stream_stater">
+                <div class="form-group">
+                    <label for="for_getting_yt_stream_key">YT Stream Key</label>
+                    <input type="text" class="form-control" placeholder="Enter Yt Stream Key" name="stream_key">
+                </div>
+
+                <div class="form-group">
+                    <label for="match_id">Match Id</label>
+                    <input type="number" class="form-control" placeholder="Enter Match ID" name="match_id">
+                </div>
+
+                <div class="form-group">
+                    <label for="fps">FPS</label>
+                    <input type="number" class="form-control" placeholder="30" name="stream_fps" disabled>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="stream_resolution_list">Choose a Stream
+                                Resolution</label>
+                        </div>
+                        <select class="custom-select" id="stream_resolution" name="stream_resolution">
+                            <!-- <option selected>Choose...</option> -->
+                            <option value="360p" disabled>360p</option>
+                            <option value="480p" disabled>480p</option>
+                            <option value="720p" selected >720p</option>
+                            <option value="1080p" disabled>1080p</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="stream link">Live Streaming Link</label>
+                    <input type="text" class="form-control" placeholder="Enter Live Streaming Link" name="stream_link">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Go live</button>
+            </form>
+
+            <% } %>
+
+                <%- include('./includes/footer.ejs') %>
